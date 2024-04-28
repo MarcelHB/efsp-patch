@@ -1,0 +1,1422 @@
+diff --git a/cgame/FX_Public.h b/cgame/FX_Public.h
+index be79bd0..921b264 100644
+--- a/cgame/FX_Public.h
++++ b/cgame/FX_Public.h
+@@ -574,37 +574,37 @@ extern FX_state_t	*FX_nextValid;
+ extern	void FX_Add( void );
+ extern	int	FX_Init( void );
+ 
+-extern inline FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags = 0);
+-extern inline FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags = 0);
++extern FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags = 0);
++extern FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags = 0);
+ 
+-extern inline FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0 );
+-extern inline FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags, float deviation );
++extern FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0 );
++extern FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags, float deviation );
+ 
+-extern inline FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) );
+-extern inline FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) );
++extern FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) );
++extern FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) );
+ 
+-extern inline FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float droll, float elasticity, float killTime, qhandle_t shader );
+-extern inline FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float droll, float elasticity, float killTime, qhandle_t shader );
++extern FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float droll, float elasticity, float killTime, qhandle_t shader );
++extern FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float droll, float elasticity, float killTime, qhandle_t shader );
+ 
+-extern inline FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0 );
+-extern inline FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags = 0 );
++extern FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0 );
++extern FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags = 0 );
+ 
+-extern inline FXLine2 *FX_AddLine2( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, float killtime, qhandle_t shader, int flags = 0 );
++extern FXLine2 *FX_AddLine2( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, float killtime, qhandle_t shader, int flags = 0 );
+ 
+-extern inline FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0  );
+-extern inline FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags = 0 );
++extern FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0  );
++extern FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags = 0 );
+ 
+-extern inline FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, void *think, localEntity_t *owner = NULL, int radius = DEFAULT_SPAWNER_RADIUS );
+-extern inline FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, int flags, void *think, localEntity_t *owner = NULL, int radius = DEFAULT_SPAWNER_RADIUS );
++extern FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, void (*think)(vec_t*, vec_t*, vec_t*, vec_t*), localEntity_t *owner = NULL, int radius = DEFAULT_SPAWNER_RADIUS );
++extern FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, int flags, void (*think)(vec_t*, vec_t*, vec_t*, vec_t*), localEntity_t *owner = NULL, int radius = DEFAULT_SPAWNER_RADIUS );
+ 
+-extern inline FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0 );
+-extern inline FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags = 0 );
++extern FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags = 0 );
++extern FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags = 0 );
+ 
+-extern inline FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, float elasticity, float killTime, qhandle_t shader, int flags = 0);
+-extern inline FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float elasticity, float killTime, qhandle_t shader, int flags = 0);
++extern FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, float elasticity, float killTime, qhandle_t shader, int flags = 0);
++extern FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float elasticity, float killTime, qhandle_t shader, int flags = 0);
+ 
+-extern inline FXCylinder *FX_AddCylinder( vec3_t start, vec3_t normal, float height, float dheight, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, float killTime, qhandle_t shader, float bias = 1.0 );
+-extern inline FXCylinder *FX_AddCylinder( vec3_t start, vec3_t normal, float height, float dheight, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, float bias = 1.0 );
++extern FXCylinder *FX_AddCylinder( vec3_t start, vec3_t normal, float height, float dheight, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, float killTime, qhandle_t shader, float bias = 1.0 );
++extern FXCylinder *FX_AddCylinder( vec3_t start, vec3_t normal, float height, float dheight, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, float bias = 1.0 );
+ 
+ float FX_DetailLevel( vec3_t origin, float near_clip, float far_clip );
+ 
+diff --git a/cgame/FX_Util.cpp b/cgame/FX_Util.cpp
+index eb8cfaa..ca36539 100644
+--- a/cgame/FX_Util.cpp
++++ b/cgame/FX_Util.cpp
+@@ -260,7 +260,7 @@ Adds a sprite to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags )
++FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -279,7 +279,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags )
++FXSprite *FX_AddSprite( vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -320,7 +320,7 @@ Adds a electricity bolt to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, 
++FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, 
+ 											float startalpha, float endalpha, float killTime, qhandle_t shader, 
+ 											int flags, float deviation )
+ {
+@@ -363,7 +363,7 @@ overloaded to pass default deviation
+ ===============
+ */
+ 
+-inline FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, 
++FXElectricity *FX_AddElectricity( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, 
+ 											float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+@@ -380,7 +380,7 @@ Adds a particle to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) )
++FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -399,7 +399,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) )
++FXParticle *FX_AddParticle( centity_t *owner, vec3_t origin, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float elasticity, float killTime, qhandle_t shader, int flags, bool (*think)(FXPrimitive *, centity_t *) )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -442,7 +442,7 @@ Adds a triangle to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
++FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -459,7 +459,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader,  int flags)
++FXTri *FX_AddTri( vec3_t origin, vec3_t origin2, vec3_t origin3, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader,  int flags)
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -495,7 +495,7 @@ Adds a quad to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float droll, float elasticity, float killTime, qhandle_t shader )
++FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, float roll, float droll, float elasticity, float killTime, qhandle_t shader )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -514,7 +514,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float droll, float elasticity, float killTime, qhandle_t shader )
++FXQuad *FX_AddQuad( vec3_t origin, vec3_t normal, vec3_t velocity, vec3_t acceleration, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float roll, float droll, float elasticity, float killTime, qhandle_t shader )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -555,7 +555,7 @@ Adds a line to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
++FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -574,7 +574,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags )
++FXLine *FX_AddLine( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -626,7 +626,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXLine2 *FX_AddLine2( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
++FXLine2 *FX_AddLine2( vec3_t origin, vec3_t origin2, float stScale, float scale, float dscale, float scale2, float dscale2, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -664,7 +664,7 @@ FX_AddSpawner
+ ===============
+ */
+ 
+-inline FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, void *think, localEntity_t *owner, int radius )
++FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, void (*think)(vec_t*, vec_t*, vec_t*, vec_t*), localEntity_t *owner, int radius )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -678,7 +678,7 @@ FX_AddSpawner
+ ===============
+ */
+ 
+-inline FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, int flags, void *think, localEntity_t *owner, int radius )
++FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity, vec3_t user, int delay, float variance, float killTime, int flags, void (*think)(vec_t*, vec_t*, vec_t*, vec_t*), localEntity_t *owner, int radius )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -700,7 +700,7 @@ inline FXSpawner *FX_AddSpawner( vec3_t origin, vec3_t angles, vec3_t velocity,
+ 
+ 	spawner->SetOwner( owner );
+ 
+-	spawner->Think = (void (__cdecl *)(vec3_t, vec3_t, vec3_t, vec3_t)) think;
++	spawner->Think = think;
+ 	
+ 	if ( flags & FXF_DELAY_SPAWN )
+ 	{
+@@ -727,7 +727,7 @@ Adds a bezier curve
+ ===============
+ */
+ 
+-inline FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
++FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -747,7 +747,7 @@ Overloaded for RGB
+ ===============
+ */
+ 
+-inline FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags )
++FXBezier *FX_AddBezier( vec3_t origin, vec3_t origin2, vec3_t control1, vec3_t control2, vec3_t control1_vel, vec3_t control2_vel, vec3_t control1_accel, vec3_t control2_accel, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float killTime, qhandle_t shader, int flags )
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -792,7 +792,7 @@ Adds a trail to the FX wrapper render list
+ ===============
+ */
+ 
+-inline FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, float elasticity, float killTime, qhandle_t shader, int flags)
++FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, float elasticity, float killTime, qhandle_t shader, int flags)
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -811,7 +811,7 @@ overloaded for RGB
+ ===============
+ */
+ 
+-inline FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float elasticity, float killTime, qhandle_t shader, int flags)
++FXTrail *FX_AddTrail( vec3_t origin, vec3_t velocity, vec3_t acceleration, float length, float dlength, float scale, float dscale, float startalpha, float endalpha, vec3_t startRGB, vec3_t endRGB, float elasticity, float killTime, qhandle_t shader, int flags)
+ {
+ 	if (cg.frametime <= 0)	//skip out if paused
+ 		return NULL;
+@@ -855,7 +855,7 @@ Adds a cylinder to the FX wrapper render list
+ 
+ //NOTENOTE: The reigning king of parameters!
+ 
+-inline FXCylinder *FX_AddCylinder(	vec3_t start, 
++FXCylinder *FX_AddCylinder(	vec3_t start, 
+ 									vec3_t normal,
+ 									float height,
+ 									float dheight,
+@@ -888,7 +888,7 @@ Overloaded for RGB
+ //NOTENOTE: The reigning king of parameters!
+ #define DEFAULT_ST_SCALE	1.0f
+ 
+-inline FXCylinder *FX_AddCylinder(	vec3_t start, 
++FXCylinder *FX_AddCylinder(	vec3_t start, 
+ 									vec3_t normal,
+ 									float height,
+ 									float dheight,
+diff --git a/cgame/cg_camera.cpp b/cgame/cg_camera.cpp
+index 57b6763..fef7e7a 100644
+--- a/cgame/cg_camera.cpp
++++ b/cgame/cg_camera.cpp
+@@ -1162,7 +1162,7 @@ void CGCam_UpdateShake( vec3_t origin, vec3_t angles )
+ 	//Move the camera
+ 	VectorAdd( origin, moveDir, origin );
+ 
+-	for ( i=0; i < 3; i++ )
++	for ( int i=0; i < 3; i++ )
+ 		moveDir[i] = ( crandom() * intensity );
+ 
+ 	//FIXME: Lerp
+diff --git a/cgame/cg_env.cpp b/cgame/cg_env.cpp
+index 19a1cd0..1f18852 100644
+--- a/cgame/cg_env.cpp
++++ b/cgame/cg_env.cpp
+@@ -50,7 +50,7 @@ void CG_Spark( vec3_t origin, vec3_t normal )
+ 	{	
+ 		scale = 0.2f + (random() *0.4);
+ 
+-		for ( j = 0; j < 3; j ++ )
++		for ( int j = 0; j < 3; j ++ )
+ 			dir[j] = normal[j] + (0.25f * crandom());
+ 		
+ 		VectorNormalize(dir);
+@@ -72,7 +72,7 @@ void CG_Spark( vec3_t origin, vec3_t normal )
+ 	if ( rand() & 1 )
+ 	{
+ 		numSparks = 1 + (random() * 2.0f);
+-		for ( i = 0; i < numSparks; i++ )
++		for ( int i = 0; i < numSparks; i++ )
+ 		{	
+ 			scale = 0.5f + (random() * 0.5f);
+ 
+@@ -771,7 +771,7 @@ void CG_ElectricFire( vec3_t origin, vec3_t normal )
+ 	VectorMA( origin, 1, normal, direction );
+ 	VectorSet( velocity, 0, 0, 8 );
+ 
+-	for ( i = 0; i < 3; i++)
++	for ( int i = 0; i < 3; i++)
+ 	{
+ 		scale = 6.0f + (random() * 8.0f);
+ 		alpha = 0.1 + (random() * 0.4f);
+@@ -1048,7 +1048,7 @@ void CG_SmallSpark( vec3_t origin, vec3_t normal )
+ 	{	
+ 		scale = 0.1f + (random() *0.2f );
+ 
+-		for ( j = 0; j < 3; j ++ )
++		for ( int j = 0; j < 3; j ++ )
+ 			dir[j] = normal[j] + (0.7f * crandom());
+ 
+ 		VectorMA( origin, 0.0f + ( random() * 0.5f ), dir, start );
+@@ -1908,4 +1908,4 @@ void CG_FountainSpurt( vec3_t org )
+ 			FX_AddSprite( org1, dir, dir2, 1.1f, -0.4f, 0.7f, 0.1f, rgb, rgb, 0.0f, 0.0f, 400.0f, cgs.media.waterDropShader );
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/cgame/cg_main.cpp b/cgame/cg_main.cpp
+index 91de405..b777f92 100644
+--- a/cgame/cg_main.cpp
++++ b/cgame/cg_main.cpp
+@@ -33,6 +33,11 @@ This is the only way control passes into the cgame module.
+ This must be the very first function compiled into the .q3vm file
+ ================
+ */
++
++extern "C" {
++__declspec(dllexport) int __cdecl vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7 );
++}
++
+ int vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7 ) {
+ 	switch ( command ) {
+ 	case CG_INIT:
+diff --git a/cgame/cg_syscalls.cpp b/cgame/cg_syscalls.cpp
+index 2d6c4c1..48e1dd5 100644
+--- a/cgame/cg_syscalls.cpp
++++ b/cgame/cg_syscalls.cpp
+@@ -21,6 +21,10 @@ extern void CG_PreInit();
+ int (*syscall)( int arg, ... ) = (int (*)( int, ...))-1;
+ 
+ 
++extern "C" {
++__declspec(dllexport) void __cdecl dllEntry( int (*syscallptr)( int arg,... ) );
++}
++
+ void dllEntry( int (*syscallptr)( int arg,... ) ) {
+ 	syscall = syscallptr;
+ 	CG_PreInit();
+diff --git a/cgame/cg_view.cpp b/cgame/cg_view.cpp
+index c72d2a7..5ca7107 100644
+--- a/cgame/cg_view.cpp
++++ b/cgame/cg_view.cpp
+@@ -641,7 +641,7 @@ static qboolean	CG_CalcFov( void ) {
+ 					cg_zoomFov = cg_fov.value;
+ 				else
+ 				{//still zooming
+-					static zoomSoundTime = 0;
++					static int zoomSoundTime = 0;
+ 
+ 					if ( zoomSoundTime < cg.time )
+ 					{
+diff --git a/cgame/fx_primitive.cpp b/cgame/fx_primitive.cpp
+index 2c89306..508bc21 100644
+--- a/cgame/fx_primitive.cpp
++++ b/cgame/fx_primitive.cpp
+@@ -1530,7 +1530,7 @@ bool FXBezier::Update( void )
+ 
+ 	VectorCopy( new_origin, m_control1 );
+ 
+-	for ( i = 0 ; i < 3 ; i++ ) 
++	for ( int i = 0 ; i < 3 ; i++ ) 
+ 	{
+ 		new_origin[i] = m_control2[i] + ftime * m_control2_velocity[i] + time2 * m_control2_velocity[i];
+ 	}
+diff --git a/game/G_Timer.cpp b/game/G_Timer.cpp
+index 2004ff0..6f5f8a6 100644
+--- a/game/G_Timer.cpp
++++ b/game/G_Timer.cpp
+@@ -69,7 +69,7 @@ void TIMER_Load( void )
+ 	{
+ 		int numTimers;
+ 
+-		gi.ReadFromSaveGame( 'TIME', (void *)&numTimers, sizeof(numTimers) );
++		gi.ReadFromSaveGame( 'TIME', (void *)&numTimers, sizeof(numTimers), NULL );
+ 
+ 		//Make sure there's something to read
+ 		if ( numTimers == 0 )
+@@ -81,7 +81,7 @@ void TIMER_Load( void )
+ 			int		length, time;
+ 			char	tempBuffer[1024];	//FIXME: Blech!
+ 
+-			gi.ReadFromSaveGame( 'TSLN', (void *) &length, sizeof( length ) );
++			gi.ReadFromSaveGame( 'TSLN', (void *) &length, sizeof( length ), NULL );
+ 
+ 			//Validity check, though this will never happen (unless of course you pass in gibberish)
+ 			if ( length >= 1024 )
+@@ -91,8 +91,8 @@ void TIMER_Load( void )
+ 			}
+ 
+ 			//Read the id and time
+-			gi.ReadFromSaveGame( 'TSNM', (char *) tempBuffer, length );
+-			gi.ReadFromSaveGame( 'TDTA', (void *) &time, sizeof( time ) );
++			gi.ReadFromSaveGame( 'TSNM', (char *) tempBuffer, length, NULL );
++			gi.ReadFromSaveGame( 'TDTA', (void *) &time, sizeof( time ), NULL );
+ 
+ 			//Restore it
+ 			g_timers[ j ][(const char *) tempBuffer ] = time;
+diff --git a/game/NPC_formation.cpp b/game/NPC_formation.cpp
+index 12912a9..3c7b589 100644
+--- a/game/NPC_formation.cpp
++++ b/game/NPC_formation.cpp
+@@ -848,7 +848,7 @@ int NPC_BuildSquadPointDistances( gentity_t *self, const vec3_t center, squadPat
+ 	minDist = 0;
+ 	
+ 	//Rank all waypoints
+-	for ( i = 0; i < squadPath->numWaypoints; i++ )
++	for ( int i = 0; i < squadPath->numWaypoints; i++ )
+ 	{
+ 		bestDist = (unsigned long) -1;
+ 
+diff --git a/game/NPC_utils.cpp b/game/NPC_utils.cpp
+index d629b59..addfa3c 100644
+--- a/game/NPC_utils.cpp
++++ b/game/NPC_utils.cpp
+@@ -961,7 +961,7 @@ int NPC_FindNearestEnemy( gentity_t *ent )
+ 	//Get a number of entities in a given space
+ 	numEnts = gi.EntitiesInBox( mins, maxs, radiusEnts, MAX_RADIUS_ENTS );
+ 
+-	for ( i = 0; i < numEnts; i++ )
++	for ( int i = 0; i < numEnts; i++ )
+ 	{
+ 		//Don't consider self
+ 		if ( radiusEnts[i] == ent )
+diff --git a/game/Q3_Registers.cpp b/game/Q3_Registers.cpp
+index e10c726..7800ff7 100644
+--- a/game/Q3_Registers.cpp
++++ b/game/Q3_Registers.cpp
+@@ -336,19 +336,19 @@ void Q3_VariableLoadFloats( varFloat_m &fmap )
+ 	int		numFloats;
+ 	char	tempBuffer[1024];
+ 
+-	gi.ReadFromSaveGame( 'FVAR', &numFloats, sizeof( numFloats ) );
++	gi.ReadFromSaveGame( 'FVAR', &numFloats, sizeof( numFloats ), NULL );
+ 
+ 	for ( int i = 0; i < numFloats; i++ )
+ 	{
+ 		int idSize;
+ 		
+-		gi.ReadFromSaveGame( 'FIDL', &idSize, sizeof( idSize ) );
+-		gi.ReadFromSaveGame( 'FIDS', &tempBuffer, idSize );
++		gi.ReadFromSaveGame( 'FIDL', &idSize, sizeof( idSize ), NULL );
++		gi.ReadFromSaveGame( 'FIDS', &tempBuffer, idSize, NULL );
+ 		tempBuffer[ idSize ] = 0;
+ 
+ 		float	val;
+ 
+-		gi.ReadFromSaveGame( 'FVAL', &val, sizeof( float ) );
++		gi.ReadFromSaveGame( 'FVAL', &val, sizeof( float ), NULL );
+ 
+ 		Q3_DeclareVariable( TK_FLOAT, (const char *) &tempBuffer );
+ 		Q3_SetFloatVariable( (const char *) &tempBuffer, val );
+@@ -367,18 +367,18 @@ void Q3_VariableLoadStrings( int type, varString_m &fmap )
+ 	char	tempBuffer[1024];
+ 	char	tempBuffer2[1024];
+ 
+-	gi.ReadFromSaveGame( 'SVAR', &numFloats, sizeof( numFloats ) );
++	gi.ReadFromSaveGame( 'SVAR', &numFloats, sizeof( numFloats ), NULL );
+ 
+ 	for ( int i = 0; i < numFloats; i++ )
+ 	{
+ 		int idSize;
+ 		
+-		gi.ReadFromSaveGame( 'SIDL', &idSize, sizeof( idSize ) );
+-		gi.ReadFromSaveGame( 'SIDS', &tempBuffer, idSize );
++		gi.ReadFromSaveGame( 'SIDL', &idSize, sizeof( idSize ), NULL );
++		gi.ReadFromSaveGame( 'SIDS', &tempBuffer, idSize, NULL );
+ 		tempBuffer[ idSize ] = 0;
+ 
+-		gi.ReadFromSaveGame( 'SVSZ', &idSize, sizeof( idSize ) );
+-		gi.ReadFromSaveGame( 'SVAL', &tempBuffer2, idSize );
++		gi.ReadFromSaveGame( 'SVSZ', &idSize, sizeof( idSize ), NULL );
++		gi.ReadFromSaveGame( 'SVAL', &tempBuffer2, idSize, NULL );
+ 		tempBuffer2[ idSize ] = 0;
+ 
+ 		switch ( type )
+@@ -411,4 +411,4 @@ int Q3_VariableLoad( void )
+ 	Q3_VariableLoadStrings( TK_VECTOR, varVectors);
+ 
+ 	return qfalse;
+-}
+\ No newline at end of file
++}
+diff --git a/game/bg_lib.cpp b/game/bg_lib.cpp
+index 1a6a7d8..b07ded0 100644
+--- a/game/bg_lib.cpp
++++ b/game/bg_lib.cpp
+@@ -76,26 +76,6 @@ char *strstr( const char *string, const char *strCharSet ) {
+ 	return (char *)0;
+ }
+ 
+-#ifndef _MSC_VER
+-
+-int tolower( int c ) {
+-	if ( c >= 'A' && c <= 'Z' ) {
+-		c += 'a' - 'A';
+-	}
+-	return c;
+-}
+-
+-#endif
+-
+-int toupper( int c ) {
+-	if ( c >= 'a' && c <= 'z' ) {
+-		c += 'A' - 'a';
+-	}
+-	return c;
+-}
+-
+-//#ifndef _MSC_VER
+-
+ 
+ 
+ #if 0
+@@ -516,9 +496,6 @@ int abs( int n ) {
+ 	return n < 0 ? -n : n;
+ }
+ 
+-double fabs( double x ) {
+-	return x < 0 ? -x : x;
+-}
+ 
+ 
+ 
+@@ -598,57 +575,3 @@ void AddFloat( char **buf_p, float fval, int width ) {
+ 	*buf_p = buf;
+ }
+ 
+-int vsprintf( char *buffer, const char *fmt, va_list argptr ) {
+-	char	*buf_p;
+-	int		cmd;
+-	int		*arg;
+-	char	*s;
+-	int		width;
+-
+-	buf_p = buffer;
+-	arg = (int *)argptr;
+-
+-	while ( *fmt ) {
+-		if ( fmt[0] != '%' ) {
+-			*buf_p++ = *fmt++;
+-			continue;
+-		}
+-
+-		cmd = fmt[1];
+-		if ( cmd >= '0' && cmd <= '9' ) {
+-			width = cmd - '0';
+-			cmd = fmt[2];
+-			fmt++;
+-		} else {
+-			width = 0;
+-		}
+-		fmt += 2;
+-
+-		switch ( cmd ) {
+-		case 'i':
+-		case 'd':
+-		case 'u':
+-			AddInt( &buf_p, *arg, width );
+-			break;
+-
+-		case 'f':
+-			AddFloat( &buf_p, *(float *)arg, width );
+-			break;
+-
+-		case 's':
+-			s = (char *)*arg;
+-			if ( !s ) {
+-				s = "<NULL>";
+-			}
+-			while ( *s ) {
+-				*buf_p++ = *s++;
+-			}
+-			break;
+-		}
+-		arg++;
+-	}
+-
+-	*buf_p = 0;
+-	return buf_p - buffer;
+-}
+-
+diff --git a/game/g_cmds.cpp b/game/g_cmds.cpp
+index ffb97d2..dc6e817 100644
+--- a/game/g_cmds.cpp
++++ b/game/g_cmds.cpp
+@@ -385,7 +385,7 @@ Cmd_Where_f
+ */
+ void Cmd_Where_f( gentity_t *ent ) {
+ 	const char *s = gi.argv(1);
+-	const len = strlen(s);
++	const size_t len = strlen(s);
+ 	gentity_t	*check;
+ 	
+ 	if ( gi.argc () < 2 ) {
+diff --git a/game/g_combat.cpp b/game/g_combat.cpp
+index ca04acf..2f9aeb8 100644
+--- a/game/g_combat.cpp
++++ b/game/g_combat.cpp
+@@ -234,7 +234,7 @@ void G_AlertTeam( gentity_t *victim, gentity_t *attacker, float radius, float so
+ 	numEnts = gi.EntitiesInBox( mins, maxs, radiusEnts, 128 );
+ 
+ 	//Cull this list
+-	for ( i = 0; i < numEnts; i++ )
++	for ( int i = 0; i < numEnts; i++ )
+ 	{
+ 		//Validate clients
+ 		if ( radiusEnts[i]->client == NULL )
+diff --git a/game/g_infostringLoad.cpp b/game/g_infostringLoad.cpp
+index ffbb576..358aa82 100644
+--- a/game/g_infostringLoad.cpp
++++ b/game/g_infostringLoad.cpp
+@@ -8,7 +8,7 @@
+ qboolean G_ParseInt( char **data, int *i );
+ qboolean G_ParseString( char **data, char **s ); 
+ 
+-extern ginfoitem_t	bg_infoItemList[];
++ginfoitem_t	bg_infoItemList[II_NUM_ITEMS];
+ 
+ typedef struct  
+ {
+diff --git a/game/g_infostrings.h b/game/g_infostrings.h
+index bd521c4..9e0802e 100644
+--- a/game/g_infostrings.h
++++ b/game/g_infostrings.h
+@@ -230,4 +230,4 @@ II_NUM_ITEMS
+ 
+ 
+ int IS_GetInfostring( char *infostring_enum );
+-ginfoitem_t	bg_infoItemList[];
++extern ginfoitem_t	bg_infoItemList[II_NUM_ITEMS];
+diff --git a/game/g_main.cpp b/game/g_main.cpp
+index d8e46f5..8dc857c 100644
+--- a/game/g_main.cpp
++++ b/game/g_main.cpp
+@@ -945,6 +945,6 @@ void G_LoadSave_WriteMiscData(void)
+ 
+ void G_LoadSave_ReadMiscData(void)
+ {
+-	gi.ReadFromSaveGame('LCKD', &player_locked, sizeof(player_locked));
++	gi.ReadFromSaveGame('LCKD', &player_locked, sizeof(player_locked), NULL);
+ }
+ 
+diff --git a/game/g_misc_model.cpp b/game/g_misc_model.cpp
+index b2e3f17..399ad72 100644
+--- a/game/g_misc_model.cpp
++++ b/game/g_misc_model.cpp
+@@ -3,7 +3,6 @@
+ #include "bg_public.h"
+ #include "g_infostrings.h"
+ 
+-ginfoitem_t	bg_infoItemList[II_NUM_ITEMS];
+ const int	bg_numInfoItems = II_NUM_ITEMS;
+ extern cvar_t *g_spskill;
+ 
+diff --git a/game/g_navigator.cpp b/game/g_navigator.cpp
+index 492bbbf..6a2d9fd 100644
+--- a/game/g_navigator.cpp
++++ b/game/g_navigator.cpp
+@@ -265,7 +265,7 @@ int	CNode::Save( int numNodes, fileHandle_t file )
+ 	//Write out the node ranks
+ 	gi.FS_Write( &numNodes, sizeof( numNodes ), file );
+ 
+-	for ( i = 0; i < numNodes; i++ )
++	for ( int i = 0; i < numNodes; i++ )
+ 	{
+ 		gi.FS_Write( &m_ranks[i], sizeof( int ), file );
+ 	}
+@@ -299,7 +299,7 @@ int CNode::Load( int numNodes, fileHandle_t file )
+ 	//Get the edge information
+ 	gi.FS_Read( &m_numEdges, sizeof( m_numEdges ), file );
+ 
+-	for ( i = 0; i < m_numEdges; i++ )
++	for ( int i = 0; i < m_numEdges; i++ )
+ 	{
+ 		edge_t	edge;
+ 
+@@ -316,7 +316,7 @@ int CNode::Load( int numNodes, fileHandle_t file )
+ 	//Allocate the memory
+ 	InitRanks( numRanks );
+ 
+-	for ( i = 0; i < numRanks; i++ )
++	for ( int i = 0; i < numRanks; i++ )
+ 	{
+ 		gi.FS_Read( &m_ranks[i], sizeof( int ), file );
+ 	}
+@@ -695,7 +695,7 @@ void CNavigator::CalculatePath( CNode *node )
+ 		node->AddRank( testNode->GetID(), curRank++ );
+ 
+ 		//Add in all the new edges
+-		for ( i = 0; i < testNode->GetNumEdges(); i++ )
++		for ( int i = 0; i < testNode->GetNumEdges(); i++ )
+ 		{
+ 			CNode	*addNode = m_nodes[ testNode->GetEdge(i) ];
+ 			assert( addNode );
+@@ -738,7 +738,7 @@ void CNavigator::CalculatePaths( void )
+ 		m_nodes[i]->InitRanks( m_nodes.size() );
+ 	}
+ 
+-	for ( i = 0; i < m_nodes.size(); i++ )
++	for ( int i = 0; i < m_nodes.size(); i++ )
+ 	{
+ 		CalculatePath( m_nodes[i] );
+ 	}
+diff --git a/game/g_objectives.cpp b/game/g_objectives.cpp
+index d7463c8..01c3317 100644
+--- a/game/g_objectives.cpp
++++ b/game/g_objectives.cpp
+@@ -89,7 +89,7 @@ OBJ_LoadMissionObjectives
+ */
+ void OBJ_LoadMissionObjectives( gclient_t *client )
+ {
+-	gi.ReadFromSaveGame('OBJT', (void *) &client->sess.mission_objectives, sizeof(client->sess.mission_objectives));
++	gi.ReadFromSaveGame('OBJT', (void *) &client->sess.mission_objectives, sizeof(client->sess.mission_objectives), NULL);
+ }
+ 
+ 
+@@ -100,7 +100,7 @@ OBJ_LoadTacticalInfo
+ */
+ void OBJ_LoadTacticalInfo(void)
+ {
+-	gi.ReadFromSaveGame('TACT', (void *) &tactical_info, sizeof(tactical_info));
++	gi.ReadFromSaveGame('TACT', (void *) &tactical_info, sizeof(tactical_info), NULL);
+ }
+ 
+ /*
+@@ -134,19 +134,29 @@ void OBJ_ParseObjectives(char *buffer)
+ 	char *holdText;
+ 
+ 	//initialize the text data jic we fall short
+-	_asm {
+-		lea edi, mission_objective_text
+-		mov ecx, MAX_OBJECTIVES
+-		mov eax, defstr
+-		rep stosd
+-	}
+-
+-	_asm {
+-		lea edi, tour_objective_text
+-		mov ecx, MAX_TOUR_OBJECTIVES
+-		mov eax, defstr
+-		rep stosd
+-	}
++	asm(
++		".intel_syntax\n"
++		"lea edi, %0\n"
++		"mov ecx, %1\n"
++		"mov eax, %2\n"
++		"rep stosd\n"
++		".att_syntax\n"
++		:
++		:"m"(mission_objective_text), "r"(MAX_OBJECTIVES), "r"(defstr)
++		:"eax", "ecx", "edi"
++	);
++
++	asm(
++		".intel_syntax\n"
++		"lea edi, %0\n"
++		"mov ecx, %1\n"
++		"mov eax, %2\n"
++		"rep stosd\n"
++		".att_syntax\n"
++		:
++		:"m"(tour_objective_text), "r"(MAX_TOUR_OBJECTIVES), "r"(defstr)
++		:"eax", "ecx", "edi"
++	);
+ 
+ 	COM_BeginParseSession();
+ 	
+@@ -221,12 +231,17 @@ void OBJ_ParseTactical(char *buffer)
+ 	memset(&tactical_info,0,sizeof(tactical_info));
+ 
+ 	//now initialize the text data as well.
+-	_asm {
+-		lea edi, tactical_text
+-		mov ecx, MAX_TACTICAL_TXT
+-		mov eax, defstr
+-		rep stosd
+-	}
++	asm(
++		".intel_syntax\n"
++		"lea edi, %0\n"
++		"mov ecx, %1\n"
++		"mov eax, %2\n"
++		"rep stosd\n"
++		".att_syntax\n"
++		:
++		:"m"(tactical_text), "r"(MAX_TACTICAL_TXT), "r"(defstr)
++		:"eax", "ecx", "edi"
++	);
+ 
+ 	COM_BeginParseSession();
+ 	
+diff --git a/game/g_public.h b/game/g_public.h
+index 870a215..66a4dd5 100644
+--- a/game/g_public.h
++++ b/game/g_public.h
+@@ -254,6 +254,8 @@ typedef struct {
+ 	int			num_entities;		// current number, <= MAX_GENTITIES
+ } game_export_t;
+ 
+-game_export_t *GetGameApi (game_import_t *import);
++extern "C" {
++__declspec(dllexport) game_export_t* __cdecl GetGameAPI (game_import_t *import);
++}
+ 
+ #endif//#ifndef __G_PUBLIC_H__
+diff --git a/game/g_roff.cpp b/game/g_roff.cpp
+index 6eeb5d6..8694f14 100644
+--- a/game/g_roff.cpp
++++ b/game/g_roff.cpp
+@@ -240,13 +240,13 @@ void G_LoadCachedRoffs()
+ 	char	buffer[MAX_QPATH];
+ 
+ 	// Get the count of goodies we need to revive
+-	gi.ReadFromSaveGame( 'ROFF', (void *)&count, sizeof(count) );
++	gi.ReadFromSaveGame( 'ROFF', (void *)&count, sizeof(count), NULL );
+ 
+ 	// Now bring 'em back to life
+ 	for ( i = 0; i < count; i++ )
+ 	{
+-		gi.ReadFromSaveGame( 'SLEN', (void *)&len, sizeof(len) );
+-		gi.ReadFromSaveGame( 'RSTR', (void *)(buffer), len );
++		gi.ReadFromSaveGame( 'SLEN', (void *)&len, sizeof(len), NULL );
++		gi.ReadFromSaveGame( 'RSTR', (void *)(buffer), len, NULL );
+ 		G_LoadRoff( buffer );
+ 	}
+ }
+diff --git a/game/g_savegame.cpp b/game/g_savegame.cpp
+index 0367519..c2fe396 100644
+--- a/game/g_savegame.cpp
++++ b/game/g_savegame.cpp
+@@ -160,7 +160,7 @@ char *GetStringPtr(int iStrlen, char *psOriginal/*may be NULL*/)
+ 
+ 		assert(iStrlen+1<=sizeof(sString));
+ 		
+-		gi.ReadFromSaveGame('STRG', sString, iStrlen);
++		gi.ReadFromSaveGame('STRG', sString, iStrlen, NULL);
+ 
+ 		// now we should keep the original string if that's the same, else make a new G_Alloc ptr...
+ 		//
+@@ -507,7 +507,7 @@ void EvaluateFields(field_t *pFields, byte *pbData, byte *pbOriginalRefData, uns
+ //	{
+ //		// load some new stuff that wasn't in the original file
+ //	}
+-	int iReadSize = gi.ReadFromSaveGame(ulChid, pbData, bOkToSizeMisMatch?0:iSize);
++	int iReadSize = gi.ReadFromSaveGame(ulChid, pbData, bOkToSizeMisMatch?0:iSize, NULL);
+ 
+ 	if (iReadSize != iSize)
+ 	{
+@@ -581,7 +581,7 @@ void WriteGEntities(qboolean qbAutosave)
+ 
+ 	gi.AppendToSaveGame('NMED', &iCount, sizeof(iCount));
+ 
+-	for (i=0; i<(qbAutosave?1:globals.num_entities); i++)
++	for (int i=0; i<(qbAutosave?1:globals.num_entities); i++)
+ 	{
+ 		gentity_t* ent = &g_entities[i];
+ 
+@@ -644,13 +644,13 @@ void ReadGEntities(qboolean qbAutosave)
+ {
+ 	int		iCount;
+ 	
+-	gi.ReadFromSaveGame('NMED', (void *)&iCount, sizeof(iCount));
++	gi.ReadFromSaveGame('NMED', (void *)&iCount, sizeof(iCount), NULL);
+ 
+ 	int iPreviousEntRead = -1;
+ 	for (int i=0; i<iCount; i++)
+ 	{
+ 		int iEntIndex;
+-		gi.ReadFromSaveGame('EDNM', (void *)&iEntIndex, sizeof(iEntIndex));
++		gi.ReadFromSaveGame('EDNM', (void *)&iEntIndex, sizeof(iEntIndex), NULL);
+ 
+ 		if (iEntIndex >= globals.num_entities)
+ 		{
+@@ -749,7 +749,7 @@ void ReadGEntities(qboolean qbAutosave)
+ 		{
+ 			parms_t tempParms;
+ 			
+-			gi.ReadFromSaveGame('PARM', &tempParms, sizeof(tempParms));
++			gi.ReadFromSaveGame('PARM', &tempParms, sizeof(tempParms), NULL);
+ 
+ 			// so can we pinch the original's one or do we have to malloc a new one?...
+ 			//
+@@ -804,7 +804,7 @@ extern int	BMS_MID;	//from g_mover
+ 		// now zap any g_ents that were inuse when the level was loaded, but are no longer in use in the saved version
+ 		//	that we've just loaded...
+ 		//
+-		for (i=iPreviousEntRead+1; i<globals.num_entities; i++)
++		for (int i=iPreviousEntRead+1; i<globals.num_entities; i++)
+ 		{
+ 			if ( g_entities[i].inuse )	// not actually necessary
+ 			{
+@@ -819,7 +819,7 @@ extern int	BMS_MID;	//from g_mover
+ 		// check that Icarus has loaded everything it saved out by having a marker chunk after it...
+ 		//
+ 		static int iBlah = 1234;
+-		gi.ReadFromSaveGame('ICOK', &iBlah, sizeof(iBlah));
++		gi.ReadFromSaveGame('ICOK', &iBlah, sizeof(iBlah), NULL);
+ 	}
+ }
+ 
+@@ -877,7 +877,7 @@ void ReadLevel(qboolean qbAutosave, qboolean qbLoadTransition)
+ 
+ 		//Read & throw away objective info
+ 		objectives_t	junkObj[MAX_MISSION_OBJ];
+-		gi.ReadFromSaveGame('OBJT', (void *) &junkObj, 0);
++		gi.ReadFromSaveGame('OBJT', (void *) &junkObj, 0, NULL);
+ 
+ 		//We still want to load in the tactical_info, though.
+ 		OBJ_LoadTacticalInfo();
+@@ -910,7 +910,7 @@ void ReadLevel(qboolean qbAutosave, qboolean qbLoadTransition)
+ 	// check that the whole file content was loaded by specifically requesting an end-marker...
+ 	//
+ 	static int iDONE = 1234;
+-	gi.ReadFromSaveGame('DONE', &iDONE, sizeof(iDONE));
++	gi.ReadFromSaveGame('DONE', &iDONE, sizeof(iDONE), NULL);
+ 
+ 
+ 	// now do something here based on 'gbSaveGameWasOldFormat' if you want...
+diff --git a/game/g_turret.cpp b/game/g_turret.cpp
+index 0277268..fd03f8f 100644
+--- a/game/g_turret.cpp
++++ b/game/g_turret.cpp
+@@ -1099,7 +1099,7 @@ void stasis_shooter_active( gentity_t *self )
+ 	//Get a number of entities in a given space
+ 	numEnts = gi.EntitiesInBox( mins, maxs, radiusEnts, 1024 );
+ 
+-	for ( i = 0; i < numEnts; i++ )
++	for ( int i = 0; i < numEnts; i++ )
+ 	{
+ 		//Don't consider self
+ 		if ( radiusEnts[i] == self )
+diff --git a/game/g_weaponLoad.cpp b/game/g_weaponLoad.cpp
+index d54a70e..7882910 100644
+--- a/game/g_weaponLoad.cpp
++++ b/game/g_weaponLoad.cpp
+@@ -1037,4 +1037,4 @@ void WP_LoadWeaponParms (void)
+ 	WP_ParseParms(buffer);
+ 
+ 	gi.FS_FreeFile( buffer );	//let go of the buffer
+-}
+\ No newline at end of file
++}
+diff --git a/icarus/BlockStream.cpp b/icarus/BlockStream.cpp
+index 145359b..e5b1d87 100644
+--- a/icarus/BlockStream.cpp
++++ b/icarus/BlockStream.cpp
+@@ -5,6 +5,7 @@
+ #pragma warning(disable : 4100)  //unref formal parm
+ #pragma warning(disable : 4710)  //member not inlined
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include "BlockStream.h"
+ 
+diff --git a/icarus/Instance.cpp b/icarus/Instance.cpp
+index 85fc128..f154cba 100644
+--- a/icarus/Instance.cpp
++++ b/icarus/Instance.cpp
+@@ -428,7 +428,7 @@ int ICARUS_Instance::LoadSignals( void )
+ {
+ 	int numSignals;
+ 
+-	m_interface->I_ReadSaveData( 'ISIG', &numSignals, sizeof( numSignals ) );
++	m_interface->I_ReadSaveData( 'ISIG', &numSignals, sizeof( numSignals ), NULL );
+ 
+ 	for ( int i = 0; i < numSignals; i++ )
+ 	{
+@@ -436,12 +436,12 @@ int ICARUS_Instance::LoadSignals( void )
+ 		int		length;
+ 
+ 		//Get the size of the string
+-		m_interface->I_ReadSaveData( 'SIG#', &length, sizeof( length ) );
++		m_interface->I_ReadSaveData( 'SIG#', &length, sizeof( length ), NULL );
+ 
+ 		assert( length < sizeof( buffer ) );
+ 
+ 		//Get the string
+-		m_interface->I_ReadSaveData( 'SIGN', &buffer, length );
++		m_interface->I_ReadSaveData( 'SIGN', &buffer, length, NULL );
+ 
+ 		//Turn it on and add it to the system
+ 		Signal( (const char *) &buffer );
+@@ -482,7 +482,7 @@ int ICARUS_Instance::LoadSequences( void )
+ 	int			numSequences;
+ 
+ 	//Get the number of sequences to read in
+-	m_interface->I_ReadSaveData( '#SEQ', &numSequences, sizeof( numSequences ) );
++	m_interface->I_ReadSaveData( '#SEQ', &numSequences, sizeof( numSequences ), NULL );
+ 
+ 	int	*idTable = new int[ numSequences ];
+ 
+@@ -490,7 +490,7 @@ int ICARUS_Instance::LoadSequences( void )
+ 		return false;
+ 
+ 	//Load the sequencer ID table
+-	m_interface->I_ReadSaveData( 'SQTB', idTable, sizeof( int ) * numSequences );
++	m_interface->I_ReadSaveData( 'SQTB', idTable, sizeof( int ) * numSequences, NULL );
+ 
+ 	//First pass, allocate all container sequences and give them their proper IDs
+ 	if ( AllocateSequences( numSequences, idTable ) == false )
+@@ -526,7 +526,7 @@ int ICARUS_Instance::LoadSequencers( void )
+ 	int			numSequencers;
+ 
+ 	//Get the number of sequencers to load
+-	m_interface->I_ReadSaveData( '#SQR', &numSequencers, sizeof( &numSequencers ) );
++	m_interface->I_ReadSaveData( '#SQR', &numSequencers, sizeof( &numSequencers ), NULL );
+ 	
+ 	//Load all sequencers
+ 	for ( int i = 0; i < numSequencers; i++ )
+@@ -555,7 +555,7 @@ int ICARUS_Instance::Load( void )
+ 
+ 	//Check to make sure we're at the ICARUS save block
+ 	double	version;
+-	m_interface->I_ReadSaveData( 'ICAR', &version, sizeof( version ) );
++	m_interface->I_ReadSaveData( 'ICAR', &version, sizeof( version ), NULL );
+ 
+ 	//Versions must match!
+ 	if ( version != ICARUS_VERSION )
+@@ -585,7 +585,7 @@ int ICARUS_Instance::Load( void )
+ 		return false;
+ 	}
+ 
+-	m_interface->I_ReadSaveData( 'IEND', &version, sizeof( version ) );
++	m_interface->I_ReadSaveData( 'IEND', &version, sizeof( version ), NULL );
+ 
+ 	return true;
+ }
+diff --git a/icarus/Sequence.cpp b/icarus/Sequence.cpp
+index 6cee972..292efc2 100644
+--- a/icarus/Sequence.cpp
++++ b/icarus/Sequence.cpp
+@@ -414,21 +414,21 @@ int CSequence::Load( void )
+ 	void			*bData;
+ 
+ 	//Get the parent sequence
+-	(m_owner->GetInterface())->I_ReadSaveData( 'SPID', &id, sizeof( id ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'SPID', &id, sizeof( id ), NULL );
+ 	m_parent = ( id != -1 ) ? m_owner->GetSequence( id ) : NULL;
+ 	
+ 	//Get the return sequence
+-	(m_owner->GetInterface())->I_ReadSaveData( 'SRID', &id, sizeof( id ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'SRID', &id, sizeof( id ), NULL );
+ 	m_return = ( id != -1 ) ? m_owner->GetSequence( id ) : NULL;
+ 
+ 	//Get the number of children
+-	(m_owner->GetInterface())->I_ReadSaveData( 'SNCH', &m_numChildren, sizeof( m_numChildren ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'SNCH', &m_numChildren, sizeof( m_numChildren ), NULL );
+ 
+ 	//Reload all children
+ 	for ( int i = 0; i < m_numChildren; i++ )
+ 	{
+ 		//Get the child sequence ID
+-		(m_owner->GetInterface())->I_ReadSaveData( 'SCHD', &id, sizeof( id ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'SCHD', &id, sizeof( id ), NULL );
+ 
+ 		//Get the desired sequence
+ 		if ( ( sequence = m_owner->GetSequence( id ) ) == NULL )
+@@ -443,46 +443,46 @@ int CSequence::Load( void )
+ 
+ 	
+ 	//Get the sequence flags
+-	(m_owner->GetInterface())->I_ReadSaveData( 'SFLG', &m_flags, sizeof( m_flags ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'SFLG', &m_flags, sizeof( m_flags ), NULL );
+ 
+ 	//Get the number of iterations
+-	(m_owner->GetInterface())->I_ReadSaveData( 'SITR', &m_iterations, sizeof( m_iterations ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'SITR', &m_iterations, sizeof( m_iterations ), NULL );
+ 
+ 	int	numCommands;
+ 
+ 	//Get the number of commands
+-	(m_owner->GetInterface())->I_ReadSaveData( 'SNMC', &numCommands, sizeof( m_numCommands ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'SNMC', &numCommands, sizeof( m_numCommands ), NULL );
+ 
+ 	//Get all the commands
+-	for ( i = 0; i < numCommands; i++ )
++	for ( int i = 0; i < numCommands; i++ )
+ 	{
+ 		//Get the block ID and create a new container
+-		(m_owner->GetInterface())->I_ReadSaveData( 'BLID', &id, sizeof( id ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'BLID', &id, sizeof( id ), NULL );
+ 		block = new CBlock;
+ 		
+ 		block->Create( id );
+ 		
+ 		//Read the block's flags
+-		(m_owner->GetInterface())->I_ReadSaveData( 'BFLG', &flags, sizeof( flags ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'BFLG', &flags, sizeof( flags ), NULL );
+ 		block->SetFlags( flags );
+ 
+ 		//Get the number of block members
+-		(m_owner->GetInterface())->I_ReadSaveData( 'BNUM', &numMembers, sizeof( numMembers ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'BNUM', &numMembers, sizeof( numMembers ), NULL );
+ 		
+ 		for ( int j = 0; j < numMembers; j++ )
+ 		{
+ 			//Get the member ID
+-			(m_owner->GetInterface())->I_ReadSaveData( 'BMID', &bID, sizeof( bID ) );
++			(m_owner->GetInterface())->I_ReadSaveData( 'BMID', &bID, sizeof( bID ), NULL );
+ 			
+ 			//Get the member size
+-			(m_owner->GetInterface())->I_ReadSaveData( 'BSIZ', &bSize, sizeof( bSize ) );
++			(m_owner->GetInterface())->I_ReadSaveData( 'BSIZ', &bSize, sizeof( bSize ), NULL );
+ 
+ 			//Get the member's data
+ 			if ( ( bData = malloc( bSize ) ) == NULL )
+ 				return false;
+ 
+ 			//Get the actual raw data
+-			(m_owner->GetInterface())->I_ReadSaveData( 'BMEM', bData, bSize );
++			(m_owner->GetInterface())->I_ReadSaveData( 'BMEM', bData, bSize, NULL );
+ 
+ 			//Write out the correct type
+ 			switch ( bID )
+diff --git a/icarus/Sequencer.cpp b/icarus/Sequencer.cpp
+index cf149d4..2323925 100644
+--- a/icarus/Sequencer.cpp
++++ b/icarus/Sequencer.cpp
+@@ -2130,7 +2130,7 @@ Load
+ int	CSequencer::Load( void )
+ {	
+ 	//Get the owner of this sequencer
+-	m_ie->I_ReadSaveData( 'SQRE', &m_ownerID, sizeof( m_ownerID ) );
++	m_ie->I_ReadSaveData( 'SQRE', &m_ownerID, sizeof( m_ownerID ), NULL );
+ 
+ 	//Link the entity back to the sequencer
+ 	m_ie->I_LinkEntity( m_ownerID, this, m_taskManager );
+@@ -2140,12 +2140,12 @@ int	CSequencer::Load( void )
+ 	int			numSequences, seqID, taskID, numTasks;
+ 
+ 	//Get the number of sequences to read
+-	m_ie->I_ReadSaveData( 'SQR#', &numSequences, sizeof( numSequences ) );
++	m_ie->I_ReadSaveData( 'SQR#', &numSequences, sizeof( numSequences ), NULL );
+ 
+ 	//Read in all the sequences
+ 	for ( int i = 0; i < numSequences; i++ )
+ 	{
+-		m_ie->I_ReadSaveData( 'SQRI', &seqID, sizeof( seqID ) );
++		m_ie->I_ReadSaveData( 'SQRI', &seqID, sizeof( seqID ), NULL );
+ 
+ 		seq = m_owner->GetSequence( seqID );
+ 
+@@ -2162,16 +2162,16 @@ int	CSequencer::Load( void )
+ 	m_taskManager->Load();
+ 
+ 	//Get the number of tasks in the map
+-	m_ie->I_ReadSaveData( 'SQT#', &numTasks, sizeof( numTasks ) );
++	m_ie->I_ReadSaveData( 'SQT#', &numTasks, sizeof( numTasks ), NULL );
+ 
+ 	//Read in, and reassociate the tasks to the sequences
+-	for ( i = 0; i < numTasks; i++ )
++	for ( int i = 0; i < numTasks; i++ )
+ 	{
+ 		//Read in the task's ID
+-		m_ie->I_ReadSaveData( 'STID', &taskID, sizeof( taskID ) );
++		m_ie->I_ReadSaveData( 'STID', &taskID, sizeof( taskID ), NULL );
+ 		
+ 		//Read in the sequence's ID
+-		m_ie->I_ReadSaveData( 'SSID', &seqID, sizeof( seqID ) );
++		m_ie->I_ReadSaveData( 'SSID', &seqID, sizeof( seqID ), NULL );
+ 
+ 		taskGroup = m_taskManager->GetTaskGroup( taskID );
+ 
+@@ -2188,15 +2188,15 @@ int	CSequencer::Load( void )
+ 	int	curGroupID;
+ 
+ 	//Get the current task group
+-	m_ie->I_ReadSaveData( 'SQCT', &curGroupID, sizeof( curGroupID ) );
++	m_ie->I_ReadSaveData( 'SQCT', &curGroupID, sizeof( curGroupID ), NULL );
+ 
+ 	m_curGroup = ( curGroupID == -1 ) ? NULL : m_taskManager->GetTaskGroup( curGroupID );
+ 
+ 	//Get the number of commands
+-	m_ie->I_ReadSaveData( 'SQ#C', &m_numCommands, sizeof( m_numCommands ) );
++	m_ie->I_ReadSaveData( 'SQ#C', &m_numCommands, sizeof( m_numCommands ), NULL );
+ 
+ 	//Get the current sequence
+-	m_ie->I_ReadSaveData( 'SQCS', &seqID, sizeof( seqID ) );
++	m_ie->I_ReadSaveData( 'SQCS', &seqID, sizeof( seqID ), NULL );
+ 
+ 	m_curSequence = ( seqID != -1 ) ? m_owner->GetSequence( seqID ) : NULL;
+ 
+diff --git a/icarus/TaskManager.cpp b/icarus/TaskManager.cpp
+index dd16b43..c90920e 100644
+--- a/icarus/TaskManager.cpp
++++ b/icarus/TaskManager.cpp
+@@ -1751,10 +1751,10 @@ void CTaskManager::Load( void )
+ 	int				bID, bSize;
+ 
+ 	//Get the GUID
+-	(m_owner->GetInterface())->I_ReadSaveData( 'TMID', &m_GUID, sizeof( m_GUID ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'TMID', &m_GUID, sizeof( m_GUID ), NULL );
+ 
+ 	//Get the number of tasks to follow
+-	(m_owner->GetInterface())->I_ReadSaveData( 'TSK#', &numTasks, sizeof( numTasks ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'TSK#', &numTasks, sizeof( numTasks ), NULL );
+ 	
+ 	//Reload all the tasks
+ 	for ( int i = 0; i < numTasks; i++ )
+@@ -1764,11 +1764,11 @@ void CTaskManager::Load( void )
+ 		assert( task );
+ 
+ 		//Get the GUID
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TKID', &id, sizeof( id ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TKID', &id, sizeof( id ), NULL );
+ 		task->SetGUID( id );
+ 
+ 		//Get the time stamp
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TKTS', &timeStamp, sizeof( timeStamp ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TKTS', &timeStamp, sizeof( timeStamp ), NULL );
+ 		task->SetTimeStamp( timeStamp );
+ 
+ 		//
+@@ -1776,25 +1776,25 @@ void CTaskManager::Load( void )
+ 		//
+ 
+ 		//Get the block ID and create a new container
+-		(m_owner->GetInterface())->I_ReadSaveData( 'BLID', &id, sizeof( id ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'BLID', &id, sizeof( id ), NULL );
+ 		block = new CBlock;
+ 		
+ 		block->Create( id );
+ 		
+ 		//Read the block's flags
+-		(m_owner->GetInterface())->I_ReadSaveData( 'BFLG', &flags, sizeof( flags ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'BFLG', &flags, sizeof( flags ), NULL );
+ 		block->SetFlags( flags );
+ 
+ 		//Get the number of block members
+-		(m_owner->GetInterface())->I_ReadSaveData( 'BNUM', &numMembers, sizeof( numMembers ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'BNUM', &numMembers, sizeof( numMembers ), NULL );
+ 		
+ 		for ( int j = 0; j < numMembers; j++ )
+ 		{
+ 			//Get the member ID
+-			(m_owner->GetInterface())->I_ReadSaveData( 'BMID', &bID, sizeof( bID ) );
++			(m_owner->GetInterface())->I_ReadSaveData( 'BMID', &bID, sizeof( bID ), NULL );
+ 			
+ 			//Get the member size
+-			(m_owner->GetInterface())->I_ReadSaveData( 'BSIZ', &bSize, sizeof( bSize ) );
++			(m_owner->GetInterface())->I_ReadSaveData( 'BSIZ', &bSize, sizeof( bSize ), NULL );
+ 
+ 			//Get the member's data
+ 			if ( ( bData = malloc( bSize ) ) == NULL )
+@@ -1804,7 +1804,7 @@ void CTaskManager::Load( void )
+ 			}
+ 
+ 			//Get the actual raw data
+-			(m_owner->GetInterface())->I_ReadSaveData( 'BMEM', bData, bSize );
++			(m_owner->GetInterface())->I_ReadSaveData( 'BMEM', bData, bSize, NULL );
+ 
+ 			//Write out the correct type
+ 			switch ( bID )
+@@ -1855,7 +1855,7 @@ void CTaskManager::Load( void )
+ 	//Load the task groups
+ 	int numTaskGroups;
+ 	
+-	(m_owner->GetInterface())->I_ReadSaveData( 'TG#G', &numTaskGroups, sizeof( numTaskGroups ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'TG#G', &numTaskGroups, sizeof( numTaskGroups ), NULL );
+ 
+ 	if ( numTaskGroups == 0 )
+ 		return;
+@@ -1863,14 +1863,14 @@ void CTaskManager::Load( void )
+ 	int *taskIDs = new int[ numTaskGroups ];
+ 
+ 	//Get the task group IDs
+-	for ( i = 0; i < numTaskGroups; i++ )
++	for ( int i = 0; i < numTaskGroups; i++ )
+ 	{
+ 		//Creat a new task group
+ 		taskGroup = new CTaskGroup;
+ 		assert( taskGroup );
+ 
+ 		//Get this task group's ID
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TKG#', &taskIDs[i], sizeof( taskIDs[i] ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TKG#', &taskIDs[i], sizeof( taskIDs[i] ), NULL );
+ 		taskGroup->m_GUID = taskIDs[i];
+ 		
+ 		m_taskGroupIDMap[ taskIDs[i] ] = taskGroup;
+@@ -1879,19 +1879,19 @@ void CTaskManager::Load( void )
+ 	}
+ 
+ 	//Recreate and load the task groups
+-	for ( i = 0; i < numTaskGroups; i++ )
++	for ( int i = 0; i < numTaskGroups; i++ )
+ 	{
+ 		taskGroup = GetTaskGroup( taskIDs[i] );
+ 		assert( taskGroup );
+ 
+ 		//Load the parent ID
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TKGP', &id, sizeof( id ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TKGP', &id, sizeof( id ), NULL );
+ 		
+ 		if ( id != -1 )
+ 			taskGroup->m_parent = ( GetTaskGroup( id ) != NULL ) ? GetTaskGroup( id ) : NULL;
+ 
+ 		//Get the number of commands in this group
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TGNC', &numMembers, sizeof( numMembers ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TGNC', &numMembers, sizeof( numMembers ), NULL );
+ 
+ 		//Save the number of members
+ 		taskGroup->m_numTasks = numMembers;
+@@ -1900,38 +1900,38 @@ void CTaskManager::Load( void )
+ 		for ( int j = 0; j < numMembers; j++ )
+ 		{
+ 			//Get the ID
+-			(m_owner->GetInterface())->I_ReadSaveData( 'GMID', &id, sizeof( id ) );
++			(m_owner->GetInterface())->I_ReadSaveData( 'GMID', &id, sizeof( id ), NULL );
+ 
+ 			//Write out the state of completion
+-			(m_owner->GetInterface())->I_ReadSaveData( 'GMDN', &completed, sizeof( completed ) );
++			(m_owner->GetInterface())->I_ReadSaveData( 'GMDN', &completed, sizeof( completed ), NULL );
+ 
+ 			//Save it out
+ 			taskGroup->m_completedTasks[ id ] = completed;
+ 		}
+ 
+ 		//Get the number of completed tasks
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TGDN', &taskGroup->m_numCompleted, sizeof( taskGroup->m_numCompleted ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TGDN', &taskGroup->m_numCompleted, sizeof( taskGroup->m_numCompleted ), NULL );
+ 	}
+ 
+ 	//Reload the currently active group
+ 	int curGroupID;
+ 
+-	(m_owner->GetInterface())->I_ReadSaveData( 'TGCG', &curGroupID, sizeof( curGroupID ) );
++	(m_owner->GetInterface())->I_ReadSaveData( 'TGCG', &curGroupID, sizeof( curGroupID ), NULL );
+ 
+ 	//Reload the map entries
+-	for ( i = 0; i < numTaskGroups; i++ )
++	for ( int i = 0; i < numTaskGroups; i++ )
+ 	{
+ 		char	name[1024];
+ 		int		length;
+ 		
+ 		//Get the size of the string
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TGNL', &length, sizeof( length ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TGNL', &length, sizeof( length ), NULL );
+ 
+ 		//Get the string
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TGNS', &name, length );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TGNS', &name, length, NULL );
+ 
+ 		//Get the id
+-		(m_owner->GetInterface())->I_ReadSaveData( 'TGNI', &id, sizeof( id ) );
++		(m_owner->GetInterface())->I_ReadSaveData( 'TGNI', &id, sizeof( id ), NULL );
+ 
+ 		taskGroup = GetTaskGroup( id );
+ 		assert( taskGroup );
+diff --git a/icarus/tokenizer.h b/icarus/tokenizer.h
+index 4aa6f46..377f7ca 100644
+--- a/icarus/tokenizer.h
++++ b/icarus/tokenizer.h
+@@ -594,4 +594,4 @@ protected:
+ };
+ 
+ 
+-#endif//__TOKENIZER_H
+\ No newline at end of file
++#endif//__TOKENIZER_H
+diff --git a/ui/gameinfo.cpp b/ui/gameinfo.cpp
+index 25a0c0d..70fb3dc 100644
+--- a/ui/gameinfo.cpp
++++ b/ui/gameinfo.cpp
+@@ -8,8 +8,11 @@
+ #include "gameinfo.h"
+ #include "..\game\weapons.h"
+ 
+-
++#ifdef _USRDLL
+ gameinfo_import_t	gi;
++#else
++static gameinfo_import_t	gi;
++#endif
+ 
+ weaponData_t weaponData[WP_NUM_WEAPONS];
+ ammoData_t ammoData[AMMO_MAX];
+diff --git a/ui/ui_atoms.cpp b/ui/ui_atoms.cpp
+index 67cd6cd..87abc36 100644
+--- a/ui/ui_atoms.cpp
++++ b/ui/ui_atoms.cpp
+@@ -13,6 +13,7 @@ qboolean	m_entersound;		// after a frame, so caching won't disrupt the sound
+ 
+ //externs
+ extern menuframework_s s_main_menu;
++extern vec4_t colorTable[];
+ float UI_ProportionalSizeScale( int style );
+ void UI_LoadFonts( void );
+ void UI_LoadMenuText(void);
+diff --git a/ui/ui_public.h b/ui/ui_public.h
+index 2627713..694706b 100644
+--- a/ui/ui_public.h
++++ b/ui/ui_public.h
+@@ -128,6 +128,8 @@ typedef struct {
+ 
+ } uiexport_t;
+ 
+-uiexport_t *GetUIAPI( void );
++extern "C" {
++__declspec(dllexport) uiexport_t* __cdecl GetUIAPI( void );
++}
+ 
+ #endif

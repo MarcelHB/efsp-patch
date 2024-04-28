@@ -1,0 +1,3 @@
+[submodule "efsp"]
+	path = efsp
+	url = https://github.com/UberGames/SP-Mod-Source-Code.git
